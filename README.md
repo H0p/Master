@@ -10,3 +10,4 @@ Hop is a mobile music game made using Unity.
 3.[Design Document - high level structure diagram](https://drive.google.com/file/d/0B4onrFO3F4y9VHRJVGZMXzJOQTg/view?usp=sharing)
 4.[Design Document - activity diagram](https://drive.google.com/file/d/0B4onrFO3F4y9X3dDN3NYYUlTYlU/view?usp=sharing)
 5.[Design Document - sequence diagram](https://drive.google.com/file/d/0B4onrFO3F4y9U2Y1SkJESFdQcmM/view?usp=sharing)
+6.[Design Document - sequence diagram 2](https://drive.google.com/file/d/0B4onrFO3F4y9eVZUWFdjQzdSQVE/view?usp=sharing)

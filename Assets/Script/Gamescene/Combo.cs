@@ -12,8 +12,8 @@ public class Combo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        combonumber = Gamecontroller.currentcombo;
-        text.text = combonumber.ToString();
+        //combonumber = Gamecontroller.currentcombo;
+        //text.text = combonumber.ToString();
         
 	}
 }

@@ -15,8 +15,8 @@ public class Score : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        score = Gamecontroller.currentscore;
-        text.text = score.ToString();
+        //score = Gamecontroller.currentscore;
+        //text.text = score.ToString();
 
     }
 }

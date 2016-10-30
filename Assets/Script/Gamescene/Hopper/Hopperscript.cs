@@ -25,7 +25,7 @@ public class Hopperscript : MonoBehaviour {
         //Debug.Log("Hiting something");
         if (collisionInfo.gameObject.tag.CompareTo("Beatspad") == 0)//push the score to controller when hopper hit the pad
         {
-            gamecontroller.addScore(scoreforround);//add the current score in the hopper into controller to refreash the score board
+	            gamecontroller.addScore(scoreforround);//add the current score in the hopper into controller to refreash the score board
 			scoreforround=0;
         }
         

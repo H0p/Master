@@ -271,12 +271,14 @@ public class CustomTeleporter : MonoBehaviour
         {
             //Debug.Log(collisionInfo.gameObject.tag);
             rb = collisionInfo.rigidbody;
+			Vector3 vertical1 = new Vector3(0.0f, 0.0f, 0.0f);
+			rb.velocity = vertical1;
             hp = collisionInfo.gameObject;
             cf = rb.GetComponent<ConstantForce>();
             rb.useGravity = false;       
             Vector3 vertical = new Vector3(0.0f, 9.8f, 0.0f);
             cf.force = vertical;
-            //rb.velocity = vertical;
+            
             //Debug.Log("Finish the process");
         }
     }

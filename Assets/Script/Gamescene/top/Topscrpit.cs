@@ -20,10 +20,10 @@ public class Topscrpit : MonoBehaviour {
         // Debug.Log("Hiting something");
         if (collisionInfo.gameObject.tag.CompareTo("Hopper") == 0)
         {
-            rb = collisionInfo.rigidbody;
+			rb = collisionInfo.rigidbody;
+			Vector3 vertical = new Vector3(0.0f, 0.0f, 0.0f);
+			rb.velocity = vertical;
             rb.useGravity = true;
-            Vector3 vertical = new Vector3(0.0f, 0.0f, 0.0f);
-            //rb.velocity = vertical;
             //hp = collisionInfo.gameObject;
             cf = rb.GetComponent<ConstantForce>();
             cf.force = vertical;

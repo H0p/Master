@@ -4,7 +4,7 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
     // Use this for initialization
-    /*public Hopperscript hopper0;
+    public Hopperscript hopper0;
     public Hopperscript hopper1;
     public Hopperscript hopper2;
     public Hopperscript hopper3;
@@ -12,13 +12,13 @@ public class GameController : MonoBehaviour {
     public  int currentcombo = 0;//combo for now
     public int goodincre = 10;//socre to add for good
     public int perfectincre = 20;//score to add for perfect
-    */
+    
     
 
     void Start () {
 	
 	}
-   /* public void addScore(int incre)//add score from each hopper to the controller
+    public void addScore(int incre)//add score from each hopper to the controller
     {
         currentscore += incre;
     }
@@ -46,5 +46,5 @@ public class GameController : MonoBehaviour {
             perfectincre = 20;
         }
 	
-	}*/
+	}
 }

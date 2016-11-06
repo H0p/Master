@@ -5,6 +5,7 @@ using System.IO;
 public class Initialize : MonoBehaviour {
 	
 	public GameObject prefab;
+	public GameObject[] previewButtons;  // an array of prefab instances
     // Use this for initialization
     private string filetrack;
 	void Start () {
@@ -12,6 +13,15 @@ public class Initialize : MonoBehaviour {
 		// get the number of musci files 
 		int num = getNumber();
 
+		// instantialize prefab at running time : currently not working: modify later
+		previewButtons = new GameObject[num];
+		Transform tranParent = GameObject.Find ("Content").transform;
+		//prefab = Resources.Load("PreviewButton") as GameObject;
+		for (int i = 0; i < num; i++) {
+
+			previewButtons[i]= Instantiate (prefab);
+			previewButtons [i].transform.parent = tranParent;
+		}
 		/*
         filetrack = System.Environment.CurrentDirectory;
         Debug.Log(filetrack);

@@ -9,9 +9,13 @@ public class AudioButton : MonoBehaviour,IPointerClickHandler
     public AudioSource music;
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!music.isPlaying) {
-            music.Play();
-        }
+		if (!music.isPlaying) {
+
+			music.Play ();
+
+		} else {
+			music.Pause ();
+		}
         
         //throw new NotImplementedException();
     }

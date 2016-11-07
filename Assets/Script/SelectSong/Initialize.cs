@@ -16,11 +16,11 @@ public class Initialize : MonoBehaviour {
 		// instantialize prefab at running time : currently not working: modify later
 		previewButtons = new GameObject[num];
 		Transform tranParent = GameObject.Find ("Content").transform;
-		//prefab = Resources.Load("PreviewButton") as GameObject;
+		prefab = Resources.Load("PreviewButton") as GameObject;
 		for (int i = 0; i < num; i++) {
 
-			previewButtons[i]= Instantiate (prefab);
-			previewButtons [i].transform.parent = tranParent;
+			previewButtons[i]= (GameObject) Instantiate (prefab);
+			previewButtons [i].transform.SetParent(tranParent, false);
 		}
 		/*
         filetrack = System.Environment.CurrentDirectory;
@@ -40,10 +40,10 @@ public class Initialize : MonoBehaviour {
 
 		string[] musicfiles = Directory.GetFiles(System.Environment.CurrentDirectory + "/Assets/testmusic", "*.mp3");
 		int count = musicfiles.Length;
-		Debug.Log("count: " + count.ToString ());
+		//Debug.Log("count: " + count.ToString ());
 		for (int i = 0; i < count; i++) {
 
-			Debug.Log (musicfiles [i]);
+			//Debug.Log (musicfiles [i]);
 		}
 
 		return count;

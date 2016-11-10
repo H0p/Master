@@ -10,6 +10,7 @@ public class Hopperscript : MonoBehaviour {
     public Queue <Collider>beatsqueue = new Queue<Collider>();//queue for the beats entering the hopper
     public int occupy = 0;//the number of current beat leaving the center but still in the hopper
     public int entering = 0;//the number of current beat entering hopper but not yet entering center
+	private GameObject ObjectD;//Waiting for destory
 
     void start()
     {
@@ -21,10 +22,11 @@ public class Hopperscript : MonoBehaviour {
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-        Debug.Log("Hiting something");
+        //Debug.Log("Hiting something");
         if (collisionInfo.gameObject.tag.CompareTo("Beatspad") == 0)//push the score to controller when hopper hit the pad
         {
-            gamecontroller.addScore(scoreforround);//add the current score in the hopper into controller to refreash the score board
+	            gamecontroller.addScore(scoreforround);//add the current score in the hopper into controller to refreash the score board
+			scoreforround=0;
         }
         
     }
@@ -37,14 +39,16 @@ public class Hopperscript : MonoBehaviour {
 
     void OnTriggerExit(Collider beats)
     {
-        if(entering != 0 && occupy !=0 && perfectvalue != 2)
+		occupy--;//minus one beats beacuase of leaving
+		if(entering == 0 && occupy ==0 &&perfectvalue != 2)
         {
             perfectvalue = 0;//reset the perfect value
         }
         gamecontroller.clearcombo();//clear the combo in controller
-		occupy--;//minus one beats beacuase of leaving
         currentbeats = beatsqueue.Dequeue();//deqeue the exiting beat
-        currentbeats.gameObject.SetActive(false);// mark one miss, destory the beat
+		ObjectD =currentbeats.gameObject;
+		Destroy(ObjectD);//destory obj
+        //currentbeats.gameObject.SetActive(false);// mark one miss, destory the beat
 
     }
     public int ifperfect()

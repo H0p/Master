@@ -13,7 +13,7 @@ namespace parser
     public class OSUb_Parser
     {
 
-        const string OsuFileFolder = @".\OsuSaved\"; 
+        const string OsuFileFolder = @".\OsuSaved\";
 
         public const string HeaderPattern = @"^\[([a-zA-Z0-9]+)\]$";
         public const string ValuePattern = @"^([a-zA-Z0-9]+)[ ]*:[ ]*(.+)$";

@@ -9,7 +9,7 @@ public class SelecSong : MonoBehaviour, IPointerClickHandler{
     public GameObject self;
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneManager.LoadScene("Selectsong");
+        SceneManager.LoadScene("newselect");
         Debug.Log("Switch to selecmenu");
         //throw new NotImplementedException();
     }

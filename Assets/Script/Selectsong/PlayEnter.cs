@@ -6,13 +6,14 @@ using System;
 using global;
 
 public class PlayEnter : MonoBehaviour,IPointerClickHandler {
-    private string name;
+    public string name;
     public GlobalController GlobalC;
     public void OnPointerClick(PointerEventData eventData)
     {
         GlobalC.receive(name);
+        //Debug.Log(name);
         SceneManager.LoadScene("Game-1");
-        Debug.Log("Playing now");
+        Debug.Log("Playing now    "+name);
         //throw new NotImplementedException();
     }
 

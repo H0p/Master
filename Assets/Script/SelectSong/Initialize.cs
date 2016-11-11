@@ -53,6 +53,9 @@ public class Initialize : MonoBehaviour
 
                 Debug.Log("audioClips" + i.ToString() + " is null");
             }
+            PlayEnter tempenter;
+            tempenter = previewButtons[i].GetComponent(typeof(PlayEnter)) as PlayEnter;
+            tempenter.name = audioClips[i].name;
             audioSource.clip = audioClips[i];
 
             if (debug == 1 && audioSource.clip == null)
@@ -92,7 +95,7 @@ public class Initialize : MonoBehaviour
     int getNumber()
     {
 
-        string[] musicfiles = Directory.GetFiles(System.Environment.CurrentDirectory + "/Assets/mp3/", "*.mp3");
+        string[] musicfiles = Directory.GetFiles(System.Environment.CurrentDirectory + "/Assets/Resources/", "*.mp3");
         int count = musicfiles.Length;
         //Debug.Log("count: " + count.ToString ());
         for (int i = 0; i < count; i++)
@@ -107,28 +110,28 @@ public class Initialize : MonoBehaviour
 
     void loadClips()
     {
-        string[] musicfiles = Directory.GetFiles(System.Environment.CurrentDirectory + "/Assets/mp3/", "*.mp3");
+        string[] musicfiles = Directory.GetFiles(System.Environment.CurrentDirectory + "/Assets/Resources/", "*.mp3");
         int num = musicfiles.Length;
         audioClips = new AudioClip[num];
-        Debug.Log("num: " + num.ToString());
+        //Debug.Log("num: " + num.ToString());
         for (int i = 0; i < num; i++)
         {
-            Debug.Log("music file " + i.ToString() + musicfiles[i]);
+            //Debug.Log("music file " + i.ToString() + musicfiles[i]);
             string name = parsePath(musicfiles[i]);
-            audioClips[i] = (AudioClip)Resources.Load(name);
+            audioClips[i] = Resources.Load(name) as AudioClip;
         }
 
     }
     // path formate : /Users/MyHome/Desktop/github/test/Assets/Resources/closer.mp3
     string parsePath(string path)
     {
-        string removeStr = System.Environment.CurrentDirectory + "/Assets/mp3/";
+        string removeStr = System.Environment.CurrentDirectory + "/Assets/Resources/";
         string nameExt = path.Remove(0, removeStr.Length);
-        Debug.Log("nameExt" + nameExt);
+        //Debug.Log("nameExt" + nameExt);
         // get rid of extention
 
         string name = nameExt.Remove(nameExt.Length - 4, 4);
-        Debug.Log("name" + name);
+        //Debug.Log("name" + name);
         return name;
     }
 

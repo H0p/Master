@@ -11,6 +11,9 @@ public class AudioButton : MonoBehaviour,IPointerClickHandler
     {
         if (!music.isPlaying) {
             music.Play();
+        }else
+        {
+            music.Pause();
         }
         
         //throw new NotImplementedException();

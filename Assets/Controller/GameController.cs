@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour {
 
     void Start () {
         string audioname = globalC.geter();
+        Debug.Log(audioname);
         loadsong(audioname);
         currentmusic.clip = currentclip;
         currentmusic.Play();

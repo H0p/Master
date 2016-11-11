@@ -35,6 +35,7 @@ namespace global
         public void receive(string s)
         {
             S_name = s;
+            Debug.Log(S_name);
         }
         public string geter()
         {

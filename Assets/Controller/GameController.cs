@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using global;
+using System.IO;
 
 public class GameController : MonoBehaviour {
 
@@ -9,15 +11,20 @@ public class GameController : MonoBehaviour {
     public Hopperscript hopper2;
     public Hopperscript hopper3;
     public AudioSource currentmusic;
+    private AudioClip currentclip;
 
     public  int currentscore = 0;//score for now
     public  int currentcombo = 0;//combo for now
     public int goodincre = 10;//socre to add for good
     public int perfectincre = 20;//score to add for perfect
+    public GlobalController globalC;
     
     
 
     void Start () {
+        string audioname = globalC.geter();
+        loadsong(audioname);
+        currentmusic.clip = currentclip;
         currentmusic.Play();
 	    
 	}
@@ -48,6 +55,12 @@ public class GameController : MonoBehaviour {
             goodincre = 10;
             perfectincre = 20;
         }
-	
 	}
+    void loadsong(string name)
+    {
+        //string[] musicfiles = Directory.GetFiles(System.Environment.CurrentDirectory + "/Assets/Resources/", "*.mp3");
+        //int num = musicfiles.Length;
+        //Debug.Log("num: " + num.ToString());
+        currentclip = Resources.Load(name) as AudioClip;
+    }
 }

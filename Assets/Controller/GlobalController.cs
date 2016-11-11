@@ -9,11 +9,7 @@ namespace global
 {
     public class GlobalController : MonoBehaviour
     {
-
-        
-
-
-
+        private static string S_name;
         // Use this for initialization
         void Start()
         {
@@ -35,6 +31,14 @@ namespace global
             //When a song was select in selectSong scene, the bmID was changed to the BeatMapId of that song, 
             //and the trackNum should be set to the number of tracks according to difficulty
 
+        }
+        public void receive(string s)
+        {
+            S_name = s;
+        }
+        public string geter()
+        {
+            return S_name;
         }
     }
 }

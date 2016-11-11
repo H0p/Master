@@ -16,7 +16,7 @@ namespace global
 
             //parse at the beginning of the welcome scene
 
-            Debug.Log("controller starts");
+            //Debug.Log("controller starts");
 
             Thread thread = new Thread(() => OSUb_Parser.ParseOsuFile(@".\Osu\sample.osu"));
             thread.Start();
@@ -35,7 +35,7 @@ namespace global
         public void receive(string s)
         {
             S_name = s;
-            Debug.Log(S_name);
+            Debug.Log("SET THE SONG: "+S_name);
         }
         public string geter()
         {

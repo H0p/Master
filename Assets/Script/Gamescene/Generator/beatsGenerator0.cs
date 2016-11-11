@@ -142,12 +142,16 @@ public class beatsGenerator0 : MonoBehaviour {
     float nextround;
     float falltime;
     int buildCount;
+    float time_for_select;
 
     public GameObject beat;
+    public GameObject Hopper;
+    Rigidbody rb;
 
     // Use this for initialization
     void Start () {
         string testname = gameC.getcurrentname();
+        //Debug.Log("sample and "+testname);
         setSongInfo(testname, 4);
         size1 = track_1.Count;
         count = 0;
@@ -156,13 +160,16 @@ public class beatsGenerator0 : MonoBehaviour {
         falltime = 2.02f;
         nextround = 0;
         buildCount = 0;
+        time_for_select = Time.time;
+        rb = Hopper.GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Time.time >= nextround)
+        if (Time.time - time_for_select >= nextround)
         {
             
             nextround += falltime;
@@ -175,7 +182,7 @@ public class beatsGenerator0 : MonoBehaviour {
                 while (track_1[count].Time < nextround*1000)
                 {
                     built = 1;
-                    float timeConsumed = Time.time;
+                    float timeConsumed = Time.time - time_for_select;
                     //Dynamic Generate
                     //None, normal, whistle, finish, clap: 0 1 2 4 8
                     float soundtype = track_1[count].Sound / 1000;
@@ -193,18 +200,18 @@ public class beatsGenerator0 : MonoBehaviour {
 
                     beat.GetComponent<Transform>().position = new Vector3(-1.875f, y, -0.75f);
                     beat.GetComponent<Transform>().rotation = new Quaternion(0.0f, soundtype, 0.0f, 0.0f);
-                    if (measure >= 1)
+                    if (measure >= 0)
                     {
                         Instantiate(beat);
                         buildCount++;
-                        //Debug.LogError("finish building: " + Time.time + " with updown " + updown+" at y = "+y);
+                        //Debug.LogError("1： finish building: " + (Time.time -time_for_select) + " with updown " + updown+" at y = "+y);
                         //Debug.LogError("measure(" + measure + ") = 0.5 * 4.5 * [beatTime(" + (float)(track_1[count].Time / 1000) +
                             //")-timeConsumed(" + timeConsumed + ")]^2");
                     }
                     count++;
                 }
 
-                if (true) updown = 1 - updown; //CHECK
+                
                 built = 0;
                 break;
             }

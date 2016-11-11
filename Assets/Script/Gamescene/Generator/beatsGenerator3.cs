@@ -142,6 +142,7 @@ public class beatsGenerator3 : MonoBehaviour {
     float nextround;
     float falltime;
     int buildCount;
+    float time_for_select;
 
     public GameObject beat;
 
@@ -149,7 +150,6 @@ public class beatsGenerator3 : MonoBehaviour {
     void Start () {
 
         string testname = gameC.getcurrentname();
-        //Debug.Log(testname);
         setSongInfo(testname, 4);
         size = track_4.Count;
         count = 0;
@@ -158,13 +158,14 @@ public class beatsGenerator3 : MonoBehaviour {
         falltime = 2.02f;
         nextround = 0;
         buildCount = 0;
+        time_for_select = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Time.time >= nextround)
+        if (Time.time - time_for_select >= nextround)
         {
             
             nextround += falltime;
@@ -177,7 +178,7 @@ public class beatsGenerator3 : MonoBehaviour {
                 while (track_4[count].Time < nextround*1000)
                 {
                     built = 1;
-                    float timeConsumed = Time.time;
+                    float timeConsumed = Time.time - time_for_select;
                     //Dynamic Generate
                     //None, normal, whistle, finish, clap: 0 1 2 4 8
                     float soundtype = track_4[count].Sound / 1000;
@@ -199,9 +200,9 @@ public class beatsGenerator3 : MonoBehaviour {
                     {
                         Instantiate(beat);
                         buildCount++;
-                        Debug.LogError("finish building: " + Time.time + " with updown " + updown+" at y = "+y);
-                        Debug.LogError("measure(" + measure + ") = 0.5 * 4.5 * [beatTime(" + (float)(track_4[count].Time / 1000) +
-                            ")-timeConsumed(" + timeConsumed + ")]^2");
+                        //Debug.LogError("4: finish building: " + (Time.time - time_for_select) + " with updown " + updown+" at y = "+y);
+                        //Debug.LogError("measure(" + measure + ") = 0.5 * 4.5 * [beatTime(" + (float)(track_4[count].Time / 1000) +
+                            //")-timeConsumed(" + timeConsumed + ")]^2");
                     }
                     count++;
                 }

@@ -85,9 +85,9 @@ namespace parser
 
                     }
                 }
-                Debug.Log("exit parse1");
+                //Debug.Log("exit parse1");
             }
-            Debug.Log("exit parse2");
+            Debug.Log("exit parse");
             //var osuFile = new OsuFile(fileInfo, filePath);
             LoadCachedList(@".\Cache\cacheList");
 
@@ -103,7 +103,7 @@ namespace parser
             if (!dinfo.Exists)
             {
 
-                Debug.Log("folder");
+                //Debug.Log("folder");
                 Directory.CreateDirectory(dinfo.Directory.FullName);
             }
 
@@ -362,7 +362,7 @@ namespace parser
                             break;
                         case "BeatmapID":
                             info.BeatMapId = int.Parse(attriValue);
-                            Debug.LogError("beatmap: "+info.BeatMapId);
+                            //Debug.LogError("beatmap: "+info.BeatMapId);
                             break;
                         default:
                             break;

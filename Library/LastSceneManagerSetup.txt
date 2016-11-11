@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scene/Game-1.unity
-=======
-- path: Assets/Scene/Selectsong.unity
->>>>>>> b4d4967ae51ab93b8506370f9c2a0d49001c5ef0
   isLoaded: 1
   isActive: 1

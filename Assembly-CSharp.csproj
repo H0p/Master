@@ -54,7 +54,6 @@
      <Compile Include="Assets\Script\FixedRatio.cs" />
      <Compile Include="Assets\Script\Gamescene\Combo.cs" />
      <Compile Include="Assets\Script\Gamescene\Generator\BeatScript.cs" />
-     <Compile Include="Assets\Script\Gamescene\Generator\OSUb_Parser.cs" />
      <Compile Include="Assets\Script\Gamescene\Generator\beatsGenerator0.cs" />
      <Compile Include="Assets\Script\Gamescene\Generator\beatsGenerator1.cs" />
      <Compile Include="Assets\Script\Gamescene\Generator\beatsGenerator2.cs" />
@@ -66,6 +65,7 @@
      <Compile Include="Assets\Script\Gamescene\Tbutton\Tbutton.cs" />
      <Compile Include="Assets\Script\Gamescene\beatspad\CustomTeleporter.cs" />
      <Compile Include="Assets\Script\Gamescene\top\Topscrpit.cs" />
+     <Compile Include="Assets\Script\OSUb_Parser.cs" />
      <Compile Include="Assets\Script\Selectsong\AudioButton.cs" />
      <Compile Include="Assets\Script\Selectsong\Initialize.cs" />
      <Compile Include="Assets\Script\Selectsong\PlayEnter.cs" />

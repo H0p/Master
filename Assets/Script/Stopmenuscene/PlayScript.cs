@@ -11,7 +11,7 @@ public class PlayScript : MonoBehaviour,IPointerClickHandler{
     public GameObject Mainmenu;
     public GameObject Option;
     void Start () {
-           self.SetActive(false);
+           //self.SetActive(false);
     }
 	
 	// Update is called once per frame

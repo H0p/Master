@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.SceneManagement;
 
 public class ResumeEvent : MonoBehaviour, IPointerClickHandler{
 
@@ -9,6 +10,7 @@ public class ResumeEvent : MonoBehaviour, IPointerClickHandler{
     public GameObject resume;
     public GameObject replay;
     public GameObject quit;
+    public AudioSource currentmusic;
     void Start () {
 	
 	}
@@ -24,10 +26,11 @@ public class ResumeEvent : MonoBehaviour, IPointerClickHandler{
         replay.SetActive(false);
         quit.SetActive(false);
         Time.timeScale = 1;
-        Debug.Log("TestClick");
-
-
-        //throw new NotImplementedException();
+        if (!currentmusic.isPlaying)
+        {
+            currentmusic.Play();
+        }
+        //Debug.Log("TestClick");
     }
 
 }

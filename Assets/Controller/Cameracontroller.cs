@@ -6,7 +6,7 @@ public class Cameracontroller: MonoBehaviour {
 
     public float UIEvalation;
 
-    public Vector3 MenuButtonPosition;
+    /*public Vector3 MenuButtonPosition;
     public Vector3 HealthBarPosition;
     public Vector3 ScoreBoardPosition;
 
@@ -17,14 +17,15 @@ public class Cameracontroller: MonoBehaviour {
 
     public GameObject ScoreBoardDebug;
     public GameObject MenuButtonDebug;
-    public GameObject HealthBarDebug;
+    public GameObject HealthBarDebug;*/
 
 
 
     void Start() {
-        ScoreBoardDebug.SetActive(false);
-        MenuButtonDebug.SetActive(false);
-        HealthBarDebug.SetActive(false);
+        //ScoreBoardDebug.SetActive(false);
+        //MenuButtonDebug.SetActive(false);
+        //HealthBarDebug.SetActive(false);
+        //Time.timeScale = 0;
         _mainCamera = Camera.main;
         SetUpScene();
     }
@@ -56,9 +57,9 @@ public class Cameracontroller: MonoBehaviour {
 
     void SetUpScene() {
 
-        Instantiate(ScoreBoardPrefab, _mainCamera.ViewportToWorldPoint(ScoreBoardPosition), Quaternion.identity);
+        /*Instantiate(ScoreBoardPrefab, _mainCamera.ViewportToWorldPoint(ScoreBoardPosition), Quaternion.identity);
         Instantiate(HealthBarPrefab, _mainCamera.ViewportToWorldPoint(HealthBarPosition), Quaternion.identity);
-        Instantiate(MenuButtonPrefab, _mainCamera.ViewportToWorldPoint(MenuButtonPosition), Quaternion.identity);
+        Instantiate(MenuButtonPrefab, _mainCamera.ViewportToWorldPoint(MenuButtonPosition), Quaternion.identity);*/
 
     }
 
@@ -66,9 +67,9 @@ public class Cameracontroller: MonoBehaviour {
 
         Camera debugCamera = this.GetComponent<Camera>();
 
-        ScoreBoardDebug.transform.position = debugCamera.ViewportToWorldPoint(ScoreBoardPosition);
+        /*ScoreBoardDebug.transform.position = debugCamera.ViewportToWorldPoint(ScoreBoardPosition);
         HealthBarDebug.transform.position = debugCamera.ViewportToWorldPoint(HealthBarPosition);
-        MenuButtonDebug.transform.position = debugCamera.ViewportToWorldPoint(MenuButtonPosition);
+        MenuButtonDebug.transform.position = debugCamera.ViewportToWorldPoint(MenuButtonPosition);*/
     }
 
 

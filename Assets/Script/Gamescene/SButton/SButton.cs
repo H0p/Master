@@ -7,8 +7,9 @@ public class SButton : MonoBehaviour {
     public GameObject resume;
     public GameObject replay;
     public GameObject quit;
-	// Use this for initialization
-	void Start () {
+    public AudioSource currentmusic;
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -19,6 +20,10 @@ public class SButton : MonoBehaviour {
     void Touched()
     {
         Time.timeScale = 0;
+        if (currentmusic.isPlaying)
+        {
+            currentmusic.Pause();
+        }
         resume.SetActive(true);
         replay.SetActive(true);
         quit.SetActive(true);

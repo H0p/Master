@@ -11,10 +11,12 @@ public class Hopperscript : MonoBehaviour {
     public int occupy = 0;//the number of current beat leaving the center but still in the hopper
     public int entering = 0;//the number of current beat entering hopper but not yet entering center
 	private GameObject ObjectD;//Waiting for destory
+    public GameObject self;
+    Rigidbody currentRigibody;
 
     void start()
     {
-       
+        currentRigibody = self.GetComponent(typeof(Rigidbody)) as Rigidbody;
     }
     void update(){
 
@@ -62,5 +64,17 @@ public class Hopperscript : MonoBehaviour {
     public void addPScore()
     {
         scoreforround += gamecontroller.perfectincre;//add perfect score into the score of this round
+    }
+    public void setKinematic(bool val)
+    {
+        if(val == true)
+        {
+            currentRigibody.isKinematic = true;
+        }
+        else
+        {
+            currentRigibody.isKinematic = false;
+        }
+        
     }
 }

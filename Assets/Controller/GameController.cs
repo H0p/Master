@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour {
     public Hopperscript hopper1;
     public Hopperscript hopper2;
     public Hopperscript hopper3;
+    public AudioSource currentmusic;
+
     public  int currentscore = 0;//score for now
     public  int currentcombo = 0;//combo for now
     public int goodincre = 10;//socre to add for good
@@ -16,7 +18,8 @@ public class GameController : MonoBehaviour {
     
 
     void Start () {
-	
+        currentmusic.Play();
+	    
 	}
     public void addScore(int incre)//add score from each hopper to the controller
     {

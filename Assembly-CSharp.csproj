@@ -74,14 +74,12 @@
      <Compile Include="Assets\Script\Stopmenuscene\OptionScirpt.cs" />
      <Compile Include="Assets\Script\Stopmenuscene\PlayScript.cs" />
      <Compile Include="Assets\Script\Stopmenuscene\Quitscirpt.cs" />
+     <Compile Include="Assets\Script\Stopmenuscene\ReplayEvent.cs" />
      <Compile Include="Assets\Script\Stopmenuscene\ResumeEvent.cs" />
      <Compile Include="Assets\Script\Stopmenuscene\SelecSong.cs" />
      <Compile Include="Assets\Script\TrackGenerator.cs" />
      <None Include="Assets\Teleportation Pad\README.txt" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>D:/Unity3D/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity3D/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -90,9 +88,6 @@
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>D:/Unity3D/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>D:/Unity3D/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

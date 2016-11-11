@@ -276,7 +276,7 @@ public class CustomTeleporter : MonoBehaviour
             hp = collisionInfo.gameObject;
             cf = rb.GetComponent<ConstantForce>();
             rb.useGravity = false;       
-            Vector3 vertical = new Vector3(0.0f, 9.8f, 0.0f);
+            Vector3 vertical = new Vector3(0.0f, 4.5f, 0.0f);
             cf.force = vertical;
             
             //Debug.Log("Finish the process");

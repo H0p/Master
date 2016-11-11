@@ -23,9 +23,10 @@ public class Topscrpit : MonoBehaviour {
 			rb = collisionInfo.rigidbody;
 			Vector3 vertical = new Vector3(0.0f, 0.0f, 0.0f);
 			rb.velocity = vertical;
-            rb.useGravity = true;
+            rb.useGravity = false;
             //hp = collisionInfo.gameObject;
             cf = rb.GetComponent<ConstantForce>();
+            vertical = new Vector3(0.0f, -4.5f, 0.0f);
             cf.force = vertical;
 
             //Debug.Log("Finish the process");

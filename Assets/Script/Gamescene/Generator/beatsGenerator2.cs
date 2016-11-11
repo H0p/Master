@@ -27,7 +27,7 @@ public class beatsGenerator2 : MonoBehaviour {
     public static List<beatOnTrack> track_3;
     public static List<beatOnTrack> track_4;
 
-    public static int bmID
+    public static string name
     {
         get;
         private set;
@@ -38,15 +38,15 @@ public class beatsGenerator2 : MonoBehaviour {
         private set;
     }
 
-    public void setSongInfo(int id, int trackID)
+    public void setSongInfo(string id, int trackID)
     {
-        bmID = id;
+        name = id;
         trackNum = trackID;
 
-        if (bmID != 0 && trackNum != 0)
+        if (name != null && trackNum != 0)
         {
 
-            string path = string.Format(@".\OsuSaved\" + bmID + ".osv");
+            string path = string.Format(@".\OsuSaved\" + name + ".osv");
             var bf = new BinaryFormatter();
             var stream = File.Open(path, FileMode.Open);
             var fileinfo = new OsuFileInfo();
@@ -117,7 +117,7 @@ public class beatsGenerator2 : MonoBehaviour {
             }
         }
 
-        bmID = 0;
+        name = null;
         trackNum = 0;
     }
 
@@ -148,7 +148,7 @@ public class beatsGenerator2 : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        setSongInfo(374115, 4);
+        setSongInfo("sample", 4);
         size = track_3.Count;
         count = 0;
         built = 0;

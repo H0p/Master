@@ -15,7 +15,7 @@ public class BeatScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider trig)
     {
-        Destroy(gameObject);
-        Debug.LogAssertion(Time.time);
+        //Destroy(gameObject);
+        //Debug.LogAssertion(Time.time);
     }
 }

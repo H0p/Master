@@ -18,11 +18,11 @@ public class GameController : MonoBehaviour {
     public int goodincre = 10;//socre to add for good
     public int perfectincre = 20;//score to add for perfect
     public GlobalController globalC;
-    
-    
+    private static string audioname;
+
 
     void Start () {
-        string audioname = globalC.geter();
+        audioname = globalC.geter();
         Debug.Log(audioname);
         loadsong(audioname);
         currentmusic.clip = currentclip;
@@ -63,5 +63,9 @@ public class GameController : MonoBehaviour {
         //int num = musicfiles.Length;
         //Debug.Log("num: " + num.ToString());
         currentclip = Resources.Load(name) as AudioClip;
+    }
+    public string getcurrentname()
+    {
+        return audioname;
     }
 }

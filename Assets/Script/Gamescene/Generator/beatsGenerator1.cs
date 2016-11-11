@@ -9,7 +9,7 @@ using System.IO;
 
 public class beatsGenerator1 : MonoBehaviour {
 
-    
+    public GameController gameC;
 
     public struct beatOnTrack
     {
@@ -148,7 +148,8 @@ public class beatsGenerator1 : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        setSongInfo("sample", 4);
+        string testname = gameC.getcurrentname();
+        setSongInfo(testname, 4);
         size = track_2.Count;
         count = 0;
         built = 0;

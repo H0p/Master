@@ -50,6 +50,15 @@
      <Compile Include="Assets\Controller\GlobalController.cs" />
      <Compile Include="Assets\Controller\TrackController.cs" />
      <Compile Include="Assets\Material\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
+     <Compile Include="Assets\PyroParticles\Demo\DemoScriptEditor.cs" />
+     <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
+     <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
+     <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
+     <Compile Include="Assets\PyroParticles\Prefab\Script\FireLightScript.cs" />
+     <Compile Include="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
+     <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
+     <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
      <Compile Include="Assets\Script\Buttonscript.cs" />
      <Compile Include="Assets\Script\FixedRatio.cs" />
      <Compile Include="Assets\Script\Gamescene\Combo.cs" />
@@ -78,7 +87,10 @@
      <Compile Include="Assets\Script\Stopmenuscene\ResumeEvent.cs" />
      <Compile Include="Assets\Script\Stopmenuscene\SelecSong.cs" />
      <Compile Include="Assets\Script\TrackGenerator.cs" />
+     <Compile Include="Assets\Script\selfDes.cs" />
+     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
      <None Include="Assets\Teleportation Pad\README.txt" />
+     <None Include="Assets\PyroParticles\Readme.txt" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity3D/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

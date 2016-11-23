@@ -266,7 +266,7 @@ public class CustomTeleporter : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-       // Debug.Log("Hiting something");
+        //Debug.Log("Hiting something: "+Time.time);
         if (collisionInfo.gameObject.tag.CompareTo("Hopper") == 0)
         {
             //Debug.Log(collisionInfo.gameObject.tag);

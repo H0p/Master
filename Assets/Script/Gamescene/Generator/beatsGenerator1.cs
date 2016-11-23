@@ -196,7 +196,7 @@ public class beatsGenerator1 : MonoBehaviour {
 
                     beat.GetComponent<Transform>().position = new Vector3(-0.625f, y, -0.75f);
                     beat.GetComponent<Transform>().rotation = new Quaternion(0.0f, soundtype, 0.0f, 0.0f);
-                    if (measure >= 1)
+                    if (measure > 1 && measure < 8.5)
                     {
                         Instantiate(beat);
                         buildCount++;

@@ -24,6 +24,7 @@ public class Tbutton : MonoBehaviour {
             {
                 hopper.occupy--;
             }
+            Gamecontroller.increhealth();
             hopper.addGScore();//add good score
             Gamecontroller.addCombo();//add one combo
             hopper.currentbeats = hopper.beatsqueue.Dequeue(); //dequeue the beats which has already been played
@@ -35,9 +36,11 @@ public class Tbutton : MonoBehaviour {
         }
         if(hopper.ifperfect() == 2)//user touch the button when the beats heats the center
         {
+            Gamecontroller.increhealth();
             hopper.addPScore();//add perfect score
             Gamecontroller.addCombo();//add one combo
-			ObjectD = hopper.currentbeats.gameObject;//assigned the object for destory
+            hopper.currentbeats = hopper.beatsqueue.Dequeue(); //dequeue the beats which has already been played
+            ObjectD = hopper.currentbeats.gameObject;//assigned the object for destory
 			hopper.currentbeats.gameObject.SetActive(false);//set the beat inactive
 			Destroy(ObjectD);//destore object
         }

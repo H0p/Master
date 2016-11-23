@@ -162,6 +162,8 @@ public class beatsGenerator0 : MonoBehaviour {
         buildCount = 0;
         time_for_select = Time.time;
         rb = Hopper.GetComponent<Rigidbody>();
+        Rigidbody beatbody = beat.GetComponent<Rigidbody>();
+        beatbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
 
     }
 
@@ -200,9 +202,12 @@ public class beatsGenerator0 : MonoBehaviour {
 
                     beat.GetComponent<Transform>().position = new Vector3(-1.875f, y, -0.75f);
                     beat.GetComponent<Transform>().rotation = new Quaternion(0.0f, soundtype, 0.0f, 0.0f);
-                    if (measure >= 0)
+                    if (measure > 1 && measure < 8.5)
                     {
                         Instantiate(beat);
+                        selfDes selfdes;
+                        selfdes = beat.GetComponent<selfDes>();
+                        selfdes._time = (float)(track_1[count].Time / 1000.000) - timeConsumed + 0.5f;
                         buildCount++;
                         //Debug.LogError("1： finish building: " + (Time.time -time_for_select) + " with updown " + updown+" at y = "+y);
                         //Debug.LogError("measure(" + measure + ") = 0.5 * 4.5 * [beatTime(" + (float)(track_1[count].Time / 1000) +

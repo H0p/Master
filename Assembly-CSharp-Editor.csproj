@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\CameraEditor.cs" />
+     <Compile Include="Assets\PyroParticles\Prefab\Editor\PyroParticlesEditor.cs" />
+     <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
      <None Include="Assets\Teleportation Pad\README.txt" />
+     <None Include="Assets\PyroParticles\Readme.txt" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>D:/Unity3D/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>

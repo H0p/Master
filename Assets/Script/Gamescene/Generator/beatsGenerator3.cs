@@ -46,7 +46,7 @@ public class beatsGenerator3 : MonoBehaviour {
         if (name != null && trackNum != 0)
         {
 
-            string path = string.Format(@".\OsuSaved\" + name + ".osv");
+            string path = OSUb_Parser.OsuFileFolder + name + ".osv";
             var bf = new BinaryFormatter();
             var stream = File.Open(path, FileMode.Open);
             var fileinfo = new OsuFileInfo();

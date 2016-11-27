@@ -6,7 +6,7 @@ public class Buttonscript : MonoBehaviour {
     // Use this for initialization
     public GameObject self;
 	void Start () {
-        self.SetActive(false);
+        //self.SetActive(false);
 	
 	}
 	

@@ -10,17 +10,47 @@ namespace global
     public class GlobalController : MonoBehaviour
     {
         private static string S_name;
+        private static bool difficulty;
+        private static bool Gstauts;
+        private static int maxcombo;
+        private static int Gmiss;
+        private static int Ggreat;
+        private static int Gperfect;
+        private static int Gscore;
+
+        public static string DATAFOLDER;
+
         // Use this for initialization
         void Start()
         {
 
             //parse at the beginning of the welcome scene
 
-            //Debug.Log("controller starts");
+            switch (Application.platform)
+            {
+                case RuntimePlatform.IPhonePlayer:
+                    DATAFOLDER = Application.persistentDataPath;
+                    break;
+                case RuntimePlatform.WindowsEditor:
+                case RuntimePlatform.WindowsPlayer:
+                    DATAFOLDER = System.Environment.CurrentDirectory;
+                    break;
+                default:
+                    DATAFOLDER = null;
+                    break;
+            }
 
-            Thread thread = new Thread(() => OSUb_Parser.ParseOsuFile(@".\Osu\sample.osu"));
+            Debug.Log("datafolder: "+DATAFOLDER);
+
+
+            //Debug.Log("controller starts");
+            difficulty = false;
+            Thread thread = new Thread(() => OSUb_Parser.ParseOsuFile(DATAFOLDER + @"/Osu/sample.osu"));
             thread.Start();
             
+
+
+
 
         }
 
@@ -40,6 +70,42 @@ namespace global
         public string geter()
         {
             return S_name;
+        }
+        public void setdiff(bool hardval)
+        {
+            difficulty = hardval;
+        }
+        public void retriveData(int combo,int score,int miss,int perfect,int great,bool status)
+        {
+            maxcombo = combo;
+            Gscore = score;
+            Gmiss = miss;
+            Gperfect = perfect;
+            Ggreat = great;
+            Gstauts = status;
+        }
+        public int givercombo(){
+            return maxcombo;
+        }
+        public int giverscore()
+        {
+            return Gscore;
+        }
+        public int givermiss()
+        {
+            return Gmiss;
+        }
+        public int giverperfect()
+        {
+            return Gperfect;
+        }
+        public int givergreat()
+        {
+            return Ggreat;
+        }
+        public bool givestatus()
+        {
+            return Gstauts;
         }
     }
 }

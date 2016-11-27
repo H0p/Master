@@ -5,6 +5,7 @@ public class Cameracontroller: MonoBehaviour {
     private Camera _mainCamera;
 
     public float UIEvalation;
+    //public LayerMask TouchInputMask;
 
     /*public Vector3 MenuButtonPosition;
     public Vector3 HealthBarPosition;
@@ -32,8 +33,35 @@ public class Cameracontroller: MonoBehaviour {
 
 	void Update () {
         //TODO:this need to be refactor onto buttons
-        RaycastHit hit = new RaycastHit();
-        for (int i = 0; i < Input.touchCount; ++i)
+        if (Input.touchCount > 0)
+        {
+            Debug.Log("Touchcount number is  "+Input.touchCount);
+        }
+        foreach(Touch touch in Input.touches)
+        {
+
+            Ray ray = _mainCamera.ScreenPointToRay(touch.position);
+            RaycastHit hit;
+            Debug.Log("Succssfully create Ray");
+            if(Physics.Raycast(ray,out hit))
+            {
+                GameObject recipient = hit.transform.gameObject;
+                Debug.Log("Object tag" + recipient.tag);
+                if(touch.phase == TouchPhase.Began)
+                {
+                    Debug.Log("Touch position is" + touch.position.ToString());
+                    if(recipient.CompareTag("Tbutton"))
+                    {
+                        recipient.SendMessage("Touched");
+                    }
+                    if(recipient.CompareTag("Sbutton"))
+                    {
+                        recipient.SendMessage("Touched");
+                    }
+                }
+            }
+        }
+        /*for (int i = 0; i < Input.touchCount; ++i)
         {
             if (Input.GetTouch(i).phase.Equals(TouchPhase.Began))
             {
@@ -51,7 +79,7 @@ public class Cameracontroller: MonoBehaviour {
                     }
                 }
             }
-        }
+        }*/
     }
 
 

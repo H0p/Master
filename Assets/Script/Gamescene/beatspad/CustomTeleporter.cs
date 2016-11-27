@@ -266,10 +266,10 @@ public class CustomTeleporter : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-        //Debug.Log("Hiting something: "+Time.time);
-        if (collisionInfo.gameObject.tag.CompareTo("Hopper") == 0)
+        Debug.Log("Hiting something: "+Time.time);
+        if (collisionInfo.gameObject.CompareTag("Hopper"))
         {
-            //Debug.Log(collisionInfo.gameObject.tag);
+            Debug.Log(collisionInfo.gameObject.tag);
             rb = collisionInfo.rigidbody;
 			Vector3 vertical1 = new Vector3(0.0f, 0.0f, 0.0f);
 			rb.velocity = vertical1;
@@ -279,7 +279,7 @@ public class CustomTeleporter : MonoBehaviour
             Vector3 vertical = new Vector3(0.0f, 4.5f, 0.0f);
             cf.force = vertical;
             
-            //Debug.Log("Finish the process");
+            Debug.Log("Finish the process");
         }
     }
 }

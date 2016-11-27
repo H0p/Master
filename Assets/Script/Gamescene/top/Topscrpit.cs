@@ -17,8 +17,8 @@ public class Topscrpit : MonoBehaviour {
     private ConstantForce cf;
     void OnCollisionEnter(Collision collisionInfo)
     {
-        // Debug.Log("Hiting something");
-        if (collisionInfo.gameObject.tag.CompareTo("Hopper") == 0)
+        //Debug.Log("Hiting something");
+        if (collisionInfo.gameObject.CompareTag("Hopper"))
         {
 			rb = collisionInfo.rigidbody;
 			Vector3 vertical = new Vector3(0.0f, 0.0f, 0.0f);

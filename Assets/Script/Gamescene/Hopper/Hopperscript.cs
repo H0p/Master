@@ -44,7 +44,7 @@ public class Hopperscript : MonoBehaviour {
         array[0,0] = 0;
         array[0,1] = 0;
         tester.Enqueue(array);
-        Debug.Log("Hopper enter"+(_testcount++));
+        //Debug.Log("Hopper enter"+(_testcount++));
         perfectvalue = 1;//if user touch the button now will get a good
         if (enter == false) beatsqueue.Enqueue(beats);
         entering++;
@@ -55,7 +55,7 @@ public class Hopperscript : MonoBehaviour {
         GameObject ObjectD = new GameObject();
         if (enter == true)
         {
-            Debug.Log("Hopper exit7" + (testcount++));
+            //Debug.Log("Hopper exit7" + (testcount++));
             self.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 1);
             perfectvalue = 1;
             occupy++;//add one reamin beat in hopper
@@ -63,13 +63,14 @@ public class Hopperscript : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Hopper exit8" + (testcount++));
+            //Debug.Log("Hopper exit8" + (testcount++));
             currentbeats = beatsqueue.Dequeue();//deqeue the exiting beat
             ObjectD = currentbeats.gameObject;
             ObjectD.SetActive(false);
             Destroy(ObjectD);//destory obj
             occupy--;//minus one beats beacuase of leaving
             gamecontroller.decrehealth();
+            gamecontroller.missnumber++;
             if (entering == 0 && occupy == 0 && perfectvalue != 2)
             {
                 perfectvalue = 0;//reset the perfect value

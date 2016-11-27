@@ -13,7 +13,8 @@ namespace parser
     public class OSUb_Parser
     {
 
-        const string OsuFileFolder = @".\OsuSaved\";
+        public readonly static string OsuFileFolder = global.GlobalController.DATAFOLDER + @"/OsuSaved/";
+        public readonly static string CacheFolder = global.GlobalController.DATAFOLDER + @"/Cache/";
 
         public const string HeaderPattern = @"^\[([a-zA-Z0-9]+)\]$";
         public const string ValuePattern = @"^([a-zA-Z0-9]+)[ ]*:[ ]*(.+)$";
@@ -27,7 +28,7 @@ namespace parser
             Debug.Log("Parse File:" + filePath);
             int debug = 0;
 
-            string name = filePath.Substring(6, filePath.Length - 10);
+            string name = "sample.osv";//TODO: filePath.Substring(6, filePath.Length - 10);
 
             Regex headeRegex = new Regex(HeaderPattern);
             var fileInfo = new OsuFileInfo();
@@ -44,6 +45,7 @@ namespace parser
                 while (!fileStream.EndOfStream)
                 {
                     string line = fileStream.ReadLine();
+                    //Debug.Log("Lineinfo "+line);
                     if (line == null) throw new Exception("string from fileStream is null");
                     if (line.StartsWith(@"//") || line.Equals(@"")) continue; //comment line, ignore
                     var match = headeRegex.Match(line);
@@ -89,12 +91,12 @@ namespace parser
             }
             Debug.Log("exit parse");
             //var osuFile = new OsuFile(fileInfo, filePath);
-            LoadCachedList(@".\Cache\cacheList");
+            LoadCachedList(CacheFolder+ @"/cacheList");
 
             if (CachedList == null) CachedList = new List<int>();
             if (!CachedList.Contains(fileInfo.BeatMapId)) CachedList.Add(fileInfo.BeatMapId);
 
-            SaveCachedList(@".\Cache\cacheList");
+            SaveCachedList(CacheFolder + @"/cacheList");
 
             var bf = new BinaryFormatter();
 

@@ -4,6 +4,8 @@ using System.IO;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
+
+
 public class Initialize : MonoBehaviour
 {
 
@@ -95,22 +97,30 @@ public class Initialize : MonoBehaviour
     int getNumber()
     {
 
-        string[] musicfiles = Directory.GetFiles(System.Environment.CurrentDirectory + "/Assets/Resources/", "*.mp3");
+        string[] musicfiles = Directory.GetFiles(Application.persistentDataPath + "/Resources/", "*.mp3");
+
+
+        string[] fs = Directory.GetFiles(Application.persistentDataPath + "/Resources/");
+
+        foreach (string s in fs) {
+            Debug.Log("file" + s);
+        }
+
         int count = musicfiles.Length;
-        //Debug.Log("count: " + count.ToString ());
+        Debug.Log("count: " + count.ToString ());
         for (int i = 0; i < count; i++)
         {
 
-            //Debug.Log (musicfiles [i]);
+            Debug.Log (musicfiles [i]);
         }
-
+       
         return count;
     }
 
 
     void loadClips()
     {
-        string[] musicfiles = Directory.GetFiles(System.Environment.CurrentDirectory + "/Assets/Resources/", "*.mp3");
+        string[] musicfiles = Directory.GetFiles(Application.persistentDataPath + "/Resources/", "*.mp3"); 
         int num = musicfiles.Length;
         audioClips = new AudioClip[num];
         //Debug.Log("num: " + num.ToString());
@@ -125,7 +135,7 @@ public class Initialize : MonoBehaviour
     // path formate : /Users/MyHome/Desktop/github/test/Assets/Resources/closer.mp3
     string parsePath(string path)
     {
-        string removeStr = System.Environment.CurrentDirectory + "/Assets/Resources/";
+        string removeStr = Application.persistentDataPath + "/Resources/";
         string nameExt = path.Remove(0, removeStr.Length);
         //Debug.Log("nameExt" + nameExt);
         // get rid of extention

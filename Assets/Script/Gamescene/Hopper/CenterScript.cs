@@ -18,7 +18,7 @@ public class CenterScript : MonoBehaviour {
 	}
     void OnTriggerEnter(Collider beats)
     {
-        Debug.Log("Entering center"+(testcount++));
+        //Debug.Log("Entering center"+(testcount++));
         //Time.timeScale = 0;
         hopper.enter = true;
         hopperObj.GetComponent<Renderer>().material.color = new Color(255, 0, 0);
@@ -33,14 +33,14 @@ public class CenterScript : MonoBehaviour {
     {
         if(hopper.occupy == 0)//test if the previous beat still in the hopper
         {
-            Debug.Log("staying"+(testcount++));
+            //Debug.Log("staying"+(testcount++));
             hopper.perfectvalue = 2;//now if the user touch the button it will be a perfect
         }
     }
     void onTriggerExit(Collider beats)
     {
         //Time.timeScale = 0;
-        Debug.LogError("center exit");
+        //Debug.LogError("center exit");
         hopperObj.GetComponent<Renderer>().material.color = new Color(0, 0, 0,1);
         hopper.perfectvalue = 1;
         hopper.occupy++;//add one reamin beat in hopper

@@ -38,9 +38,11 @@ public class GameController : MonoBehaviour {
         loading(audioname);
         currentmusic.clip = currentclip;
         currentmusic.Play();
-        fireani.SetActive(false);
+        //fireani.SetActive(false);
         health = 100;
+        //timer = 50;
         timer = currentmusic.clip.length;
+        Debug.Log("Clip length is   " + timer);
         
 	    
 	}
@@ -54,6 +56,7 @@ public class GameController : MonoBehaviour {
     }
     public void clearcombo()//called when miss happened
     {
+        fireani.SetActive(false);
         if (currentcombo > maxcombo)
         {
             maxcombo = currentcombo;
@@ -98,14 +101,15 @@ public class GameController : MonoBehaviour {
             healthbar.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 1);
             //Debug.LogError("fixupdatehealth30");
         }
-        else if (health < 10)
+        else if (health < 10 && health >0)
         {
             healthbar.GetComponent<Renderer>().material.color = new Color(255, 255, 255);
             //Debug.LogError("fixupdatehealth10");
         }
-        else if(health < 0)
+        else if(health <= 0)
         {
             globalC.retriveData(maxcombo, currentscore, missnumber, perfectnumber, greatnumber, false);
+            Debug.Log("Health has decrease to  zore");
             SceneManager.LoadScene("Endscene");
         }
         timer = timer - Time.deltaTime;
@@ -129,6 +133,9 @@ public class GameController : MonoBehaviour {
     }
     public void increhealth()
     {
-        health++;
+        if (health > 100)
+        {
+            health++;
+        }
     }
 }

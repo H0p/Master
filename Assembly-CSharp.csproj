@@ -57,6 +57,7 @@
      <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
      <Compile Include="Assets\Script\Buttonscript.cs" />
+     <Compile Include="Assets\Script\EndScene\ReturntoMain.cs" />
      <Compile Include="Assets\Script\EndScene\initler.cs" />
      <Compile Include="Assets\Script\FixedRatio.cs" />
      <Compile Include="Assets\Script\Gamescene\Combo.cs" />

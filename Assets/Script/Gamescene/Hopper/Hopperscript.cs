@@ -40,10 +40,10 @@ public class Hopperscript : MonoBehaviour {
     }
     void  OnTriggerEnter(Collider beats)
     {
-        int[,] array = new int[1,2];
-        array[0,0] = 0;
-        array[0,1] = 0;
-        tester.Enqueue(array);
+        //int[,] array = new int[1,2];
+        //array[0,0] = 0;
+        //array[0,1] = 0;
+        //tester.Enqueue(array);
         //Debug.Log("Hopper enter"+(_testcount++));
         perfectvalue = 1;//if user touch the button now will get a good
         if (enter == false) beatsqueue.Enqueue(beats);

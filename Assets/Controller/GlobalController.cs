@@ -9,14 +9,14 @@ namespace global
 {
     public class GlobalController : MonoBehaviour
     {
-        private static string S_name;
-        private static bool difficulty;
-        private static bool Gstauts;
-        private static int maxcombo;
-        private static int Gmiss;
-        private static int Ggreat;
-        private static int Gperfect;
-        private static int Gscore;
+        public static string S_name;
+        public static bool difficulty;
+        public static bool Gstauts;
+        public static int maxcombo;
+        public static int Gmiss;
+        public static int Ggreat;
+        public static int Gperfect;
+        public static int Gscore;
 
         public static string DATAFOLDER;
 
@@ -83,6 +83,7 @@ namespace global
             Gperfect = perfect;
             Ggreat = great;
             Gstauts = status;
+            Debug.Log(" Combo " + maxcombo + " Score " + Gscore + " miss " + Gmiss + " perfect " + Gperfect);
         }
         public int givercombo(){
             return maxcombo;

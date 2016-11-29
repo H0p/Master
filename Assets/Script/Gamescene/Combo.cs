@@ -14,6 +14,5 @@ public class Combo : MonoBehaviour {
 	void FixedUpdate () {
         combonumber = Gamecontroller.currentcombo;
         text.text = combonumber.ToString();
-        
 	}
 }
